@@ -1,6 +1,4 @@
 #!/bin/bash
-
-
 # Путь для сохранения резервных копий
 BACKUP_DIR="/home/naagapov/mysql_bac"
 
