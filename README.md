@@ -1,6 +1,6 @@
 #  Реализация отказоустойчивого Web-приложения
 Инфраструктура:  
-1  	**proxy-ngx**  ВМ Nginx- реверс прокси  
+1  	**proxy-ngx**  ВМ Nginx- реверс прокси  c бекапами.
 2   **back-wp-01-master-db**    ВМ Apache Mysql wp - 1 бэк с wordpress и master БД  
 3   **back-wp-02-elk** ВМ Apache wp ELK - 2 бэк с wordpress и журналами в elastic (ELK)+ filebeat    (конфиги хранить в GitHub)  
 4   **slave-db-zbx**  ВМ replica БД c системой мониторинга Zabbix. Тут скрипт для бэкапа БД со slave сервера (потаблично с указанием позиции бинлога, скрипт хранить в GitHub), Zabbix (конфиги хранить в GitHub)  
@@ -15,4 +15,5 @@ DRP план.
 продемонстрировать аварийное восстановление (на чистом сервере за короткий промежуток времени получить полностью настроенную рабочую систему)  
 
 
-![image](https://github.com/socrat16/otus_project/assets/71122445/a246b483-eebe-4195-8e08-22095fda405c)
+
+![image](https://github.com/socrat16/otus_project/assets/71122445/e1866aeb-ed1f-4c60-b526-f0a368f708c7)
