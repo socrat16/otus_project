@@ -1,7 +1,7 @@
 #!/bin/bash
 #https://askubuntu.com/questions/1270094/how-to-completely-remove-mysql-from-my-system
 sudo systemctl stop mysql
-sudo apt purge mysql-server mysql-common mysql-server-core-* mysql-client-core-*
+sudo apt purge mysql-server mysql-common mysql-server-core-* mysql-client-core-* -y
 sudo rm -rf /var/lib/mysql/
 sudo rm -rf /etc/mysql/
 sudo rm -rf /var/log/mysql
