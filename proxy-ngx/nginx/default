@@ -36,7 +36,7 @@
 
 
 upstream apacher {
-        server 10.129.0.21:9915 down;
+        server 10.129.0.21:9915;
         server 10.128.0.16:9917;
 }
 
