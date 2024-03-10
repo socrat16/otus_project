@@ -1,11 +1,9 @@
 #  Реализация отказоустойчивого Web-приложения
 Инфраструктура:  
-1  	**proxy-ngx**  ВМ Nginx- реверс прокси  c бекапами.  
-2   **back-wp-01-master-db**    ВМ Apache Mysql wp - 1 бэк с wordpress и master БД  
-3   **back-wp-02-elk** ВМ Apache wp ELK - 2 бэк с wordpress и журналами в elastic (ELK)+ filebeat    (конфиги хранить в GitHub)  
-4   **slave-db-zbx**  ВМ replica БД c системой мониторинга Zabbix. Тут скрипт для бэкапа БД со slave сервера (потаблично с указанием позиции бинлога, скрипт хранить в GitHub), Zabbix (конфиги хранить в GitHub)  
-
-+ На каждой ВМ агенты: zabbix-agent,filebeat  
+1  	**proxy-ngx** Nginx - реверс прокси c бекапами БД Wordpress,Zabbix,Elasticsearch. Агенты: Filebeat (логи Nginx для ELK), Zabbix agent2 (метрики для мониторинга\алертинга в Zabbix).
+2   **back-wp-01-master-db** Apache,Mysql,Wordpress,Zabbix agent2.Первый Apache бэкенд с Wordpress и Master БД Mysql.  
+3   **back-wp-02-elk** Apache,Mysql,Wordpress,Zabbix agent2,ELK.Второй Apache бэкенд с Wordpress. Использует БД back-wp-01-master-db. Развернут стек ELK, с приемом логов от Nginx с VM proxy-ngx.
+4   **slave-db-zbx** Apache,Mysql,Zabbix,Zabbix agent2.Replica БД c системой мониторинга Zabbix.Тут бекап по Cron БД Wordpress,Zabbix(потаблично с указанием позиции бинлога).
 
 DRP план.
 
