@@ -1,0 +1,5 @@
+#!/bin/bash
+# бекап zabbix DB в файл
+# mysqldump -uroot zabbix   > ./back/zabbix.sql
+# восстановление
+mysql -uroot zabbix < back/zabbix.sql
