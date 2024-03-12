@@ -1,6 +1,6 @@
 #  Реализация отказоустойчивого Web-приложения
 Инфраструктура:  
-1  	**proxy-ngx** Nginx - реверс прокси c бекапами БД Wordpress,Zabbix,Elasticsearch. Агенты: Filebeat (логи Nginx для ELK), Zabbix agent2 (метрики для мониторинга\алертинга в Zabbix).  
+1  	**proxy-ngx** Nginx - реверс прокси c бекапами БД Wordpress,Zabbix. Агенты: Filebeat (логи Nginx для ELK), Zabbix agent2 (метрики для мониторинга\алертинга в Zabbix).  
 2   **back-wp-01-master-db** Apache,Mysql,Wordpress,Zabbix agent2.Первый Apache бэкенд с Wordpress и Master БД Mysql.  
 3   **back-wp-02-elk** Apache,Mysql,Wordpress,Zabbix agent2,ELK.Второй Apache бэкенд с Wordpress. Использует БД back-wp-01-master-db. Развернут стек ELK, с приемом логов от Nginx с VM proxy-ngx.  
 4   **slave-db-zbx** Apache,Mysql,Zabbix,Zabbix agent2.Replica БД c системой мониторинга Zabbix.Тут бекап по Cron БД Wordpress,Zabbix(потаблично с указанием позиции бинлога).
