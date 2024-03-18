@@ -1,0 +1,7 @@
+#!/bin/bash
+
+mysql -u root -e "STOP REPLICA;"
+mysql -u root -e "CHANGE REPLICATION SOURCE TO SOURCE_HOST='10.129.0.21', SOURCE_USER='repl', SOURCE_PASSWORD='123', SOURCE_AUTO_POSITION = 1, GET_SOURCE_PUBLIC_KEY = 1;"
+mysql -u root -e "CHANGE REPLICATION FILTER REPLICATE_DO_DB = (wordpress);"
+mysql -u root -e "START REPLICA;"
+
