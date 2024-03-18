@@ -23,4 +23,5 @@ mysql -uroot zabbix < zabbix.sql
 
 
 sudo systemctl restart zabbix-server zabbix-agent apache2 mysql.service
-sudo systemctl enable zabbix-server zabbix-agent apache2#Установка apache2
+sudo systemctl enable zabbix-server zabbix-agent apache2
+#Установка apache2
