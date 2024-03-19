@@ -1,0 +1,41 @@
+upstream apacher {
+        server 10.129.0.21:9915 weight=5 max_fails=1 fail_timeout=5s;
+        server 10.128.0.16:9917 max_fails=2 fail_timeout=5s;
+
+}
+server {
+        listen *:80;
+        server_name digmath.com;
+        location / {
+                proxy_pass http://apacher;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header X-Forwarded-Proto 'http';
+        }
+        location /zabbix/ {
+                 proxy_pass http://10.128.0.17:1616/zabbix/;
+                 proxy_set_header Host $host;
+                 proxy_set_header X-Real-IP $remote_addr;
+                 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        }
+        location /kibana {
+                 proxy_pass http://10.128.0.16:5601;
+                 proxy_http_version 1.1;
+                 proxy_set_header Upgrade $http_upgrade;
+                 proxy_set_header Connection 'upgrade';
+                 proxy_set_header Host $host;
+                 proxy_cache_bypass $http_upgrade;
+                 proxy_set_header X-Real-IP $remote_addr;
+                 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                 proxy_set_header X-Forwarded-Proto $scheme;
+        }
+        location  ~* \/wp  {
+                proxy_pass http://apacher;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+        }
+
+}
