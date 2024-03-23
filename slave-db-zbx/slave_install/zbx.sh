@@ -20,8 +20,7 @@ sudo mysql -uroot -e  "set global log_bin_trust_function_creators = 0;"
 # mysqldump -uroot zabbix   > ./back/zabbix.sql
 mysql -uroot zabbix < zabbix.sql
 
-
+sudo cp ./slave_install/config/etc/mysqld.cnf /etc/mysql/mysql.conf.d/mysqld.cnf
 
 sudo systemctl restart zabbix-server zabbix-agent apache2 mysql.service
-sudo systemctl enable zabbix-server zabbix-agent apache2
-#Установка apache2
+sudo systemctl enable zabbix-server zabbix-agent apache2#Установка apache2
