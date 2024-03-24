@@ -25,4 +25,6 @@ ngx.sh  - Установка Nginx
 secure.sh   - Установка Iptables
 
 
+Бекапы файлов сайта,БД,deb хранятся локально на ПК.ВМ создаются на Yandex.Cloud,предварительно к ним настроен доступ по ssh.
+
 ![image](https://github.com/socrat16/otus_project/assets/71122445/1a54fa5e-b9bf-4309-914a-4da81b7b2ce7)
