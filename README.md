@@ -11,7 +11,7 @@ DRP план.
 3. На back-wp-02-elk запустить скрипты в wp1_install.Поочередно:zbx.sh,wp.sh,felk.sh (export.ndjson - файл для импорта бекапа дэша и discover: kibana -> Stack Managment -> Saved Objects -> import)
 4. На  slave-db-zbx  запустить скрипты в slave_install.Поочередно:  slave.sh - скрипт настройки mysql реплики.
 
-Заметки:
+Заметки:  
 up_db.sh - восстановление из бекапа.  
 wp.sh  - установка agent2,wordpress,mysql,php.  
 cron_back.sh - крон для скрипта бекапа back_sql.sh (БД Wordpress).  
