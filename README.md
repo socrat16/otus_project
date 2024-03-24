@@ -13,10 +13,16 @@ DRP план.
 
 Заметки:  
 up_db.sh - восстановление из бекапа.  
-wp.sh  - установка agent2,wordpress,mysql,php.  
+wp.sh  - установка Apache,wordpress,mysql,php.  
 cron_back.sh - крон для скрипта бекапа back_sql.sh (БД Wordpress).  
 back_sql.sh - cкрипт для создания потабличного бекапа.  
 slave.sh - скрипт настройки mysql реплики.  
 zbx.sh - Установка Zabbix
 felk.sh - Установка ELK (elasticsearch,logstash,kibana) + Filebeeat
+fb.sh - Установка fielbeat
+zbx.sh - Установка Zabbix agent2
+ngx.sh  - Установка Nginx
+secure.sh   - Установка Iptables
+
+
 ![image](https://github.com/socrat16/otus_project/assets/71122445/1a54fa5e-b9bf-4309-914a-4da81b7b2ce7)
