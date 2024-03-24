@@ -19,7 +19,7 @@ sudo chown www-data: /srv/www
 #sudo curl https://wordpress.org/latest.tar.gz | sudo -u www-data tar zx -C /srv/www
 sudo cp ./config/wordpress.conf /etc/apache2/sites-available/wordpress.conf
 sudo cp ./config/ports.conf     /etc/apache2/ports.conf
-sudo cp ./config/mysqld.conf    /etc/mysql/mysql.conf.d/mysqld.conf
+sudo cp ./config/mysqld.cnf    /etc/mysql/mysql.conf.d/mysqld.cnf
 sudo tar -xzf wordpress.tar.gz  -P
 sudo mysql -u root -e "CREATE DATABASE wordpress;"
 sudo mysql -u root -e "CREATE USER wordpress@localhost IDENTIFIED BY '123';"
