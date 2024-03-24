@@ -13,5 +13,4 @@ DRP план.
 
 
 
-
-![image](https://github.com/socrat16/otus_project/assets/71122445/e1866aeb-ed1f-4c60-b526-f0a368f708c7)
+![image](https://github.com/socrat16/otus_project/assets/71122445/1a54fa5e-b9bf-4309-914a-4da81b7b2ce7)
