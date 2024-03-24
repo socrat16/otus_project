@@ -6,9 +6,9 @@
 4   **slave-db-zbx** Apache,Mysql,Zabbix,Zabbix agent2.Replica БД c системой мониторинга Zabbix.Тут бекап по Cron БД Wordpress,Zabbix(потаблично с указанием позиции бинлога).
 
 DRP план.
-1. На proxy-ngx  запустить скрипт proxy.sh ( установка nginx,filebeat,zabbix agent и копирование конфигов)
-2. Запуск back1.sh ( копируем zabbix agent,бекап БД,архив wp1,конфиги: mysql,zabbix,apache2,load_cfgwp1.sh,db_load.sh)
-3. Запуск back2.sh ( копируем zabbix agent,архив wp2,FELK,конфиги: mysql,zabbix,apache2,filebeat,kibana, elastic,logstach,load_cfgwp2.sh)
+1. На proxy-ngx  запустить скрипты в ngx_install ( установка nginx,iptables,filebeat,zabbix agent и копирование конфигов)
+2. На back-wp-01-master-db запустить скрипты в  wp0_install ( iptables,filebeat,zabbix agent,wordpress,mysql,apache2,up_db.sh - восстановление из бекапа)  
+3. На back-wp-02-elk запуск wp1_install ( копируем zabbix agent,архив wp2,FELK,iptablesконфиги: mysql,zabbix,apache2,filebeat,kibana, elastic,logstach,iptables)
 4. Запуск slave_zab.sh ( копируем zab_db.sh,zabbix
 Описание/Пошаговая инструкция выполнения домашнего задания:  
 создать репозитории в GitHub (конфиги, скрипты, cron файлы и т.д.)  
